@@ -30,7 +30,7 @@ module Ckeditor
 
       def content_type_from_file_command
         type = begin
-          Cocaine::CommandLine.new('file', '-b --mime-type :file').run(file: @file_path)
+          Cocaine::CommandLine.new('file', '-b --mime :file').run(file: @file_path)
         rescue Cocaine::CommandLineError => e
           # TODO: log command failure
           DEFAULT_CONTENT_TYPE
